@@ -1,5 +1,5 @@
 # Stage 1: Build
-FROM golang:1.21-alpine AS builder
+FROM golang:1.23-alpine AS builder
 
 # Install git and ca-certificates (needed for fetching dependencies)
 RUN apk update && apk add --no-cache git ca-certificates tzdata && update-ca-certificates
@@ -24,6 +24,8 @@ WORKDIR /build
 COPY go.mod go.sum ./
 
 # Download dependencies
+# Allow Go toolchain auto-download for version compatibility
+ENV GOTOOLCHAIN=auto
 RUN go mod download && go mod verify
 
 # Copy source code
