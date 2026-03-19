@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .title }}</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Todo App - Go REST API</h1>
+            <p>Jenkins CI/CD Pipeline Demo with Kubernetes Deployment</p>
+        </header>
+
+        <main>
+            <section class="api-info">
+                <h2>API Endpoints</h2>
+                <ul>
+                    <li><strong>GET</strong> /api/todos - List all todos</li>
+                    <li><strong>GET</strong> /api/todos/:id - Get a specific todo</li>
+                    <li><strong>POST</strong> /api/todos - Create a new todo</li>
+                    <li><strong>PUT</strong> /api/todos/:id - Update a todo</li>
+                    <li><strong>DELETE</strong> /api/todos/:id - Delete a todo</li>
+                </ul>
+            </section>
+
+            <section class="health-checks">
+                <h2>Health Checks</h2>
+                <ul>
+                    <li><a href="/health" target="_blank">Health Check</a></li>
+                    <li><a href="/ready" target="_blank">Readiness Check</a></li>
+                </ul>
+            </section>
+
+            <section class="try-it">
+                <h2>Try the API</h2>
+                <div class="curl-examples">
+                    <h3>Example Commands:</h3>
+                    <pre><code># List all todos
+curl http://localhost:8080/api/todos
+
+# Create a new todo
+curl -X POST http://localhost:8080/api/todos \
+  -H "Content-Type: application/json" \
+  -d '{"title": "Learn Jenkins CI/CD"}'
+
+# Update a todo
+curl -X PUT http://localhost:8080/api/todos/1 \
+  -H "Content-Type: application/json" \
+  -d '{"is_completed": true}'
+
+# Delete a todo
+curl -X DELETE http://localhost:8080/api/todos/1</code></pre>
+                </div>
+            </section>
+
+            <section class="tech-stack">
+                <h2>Tech Stack</h2>
+                <ul>
+                    <li>Go + Gin Framework</li>
+                    <li>Docker (Multi-stage build)</li>
+                    <li>Jenkins (CI/CD Pipeline)</li>
+                    <li>Kubernetes (GKE)</li>
+                    <li>ArgoCD (GitOps)</li>
+                    <li>DockerHub (Container Registry)</li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <p>Developed by WarunaUdara | GitHub: <a href="https://github.com/WarunaUdara/jenkins-e2e-cicd-pipeline-google-kubernetes-engine" target="_blank">View Repository</a></p>
+        </footer>
+    </div>
+</body>
+</html>
