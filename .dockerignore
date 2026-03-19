@@ -1,0 +1,66 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Documentation
+README.md
+*.md
+LICENSE
+
+# CI/CD
+Jenkinsfile
+.github
+.gitlab-ci.yml
+
+# Environment
+.env
+.env.local
+.env.*.local
+.env.template
+
+# IDE and Editor
+.vscode
+.idea
+*.swp
+*.swo
+*~
+.DS_Store
+*.iml
+
+# Build artifacts
+bin/
+dist/
+build/
+tmp/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test files
+*_test.go
+*_test.go.bak
+testdata/
+
+# Go specific
+vendor/
+go.work
+go.work.sum
+
+# Logs
+*.log
+logs/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Project specific tracking files
+PROJECT_PROGRESS.md
+PROGRESS_*.md
+
+# Skills directory
+.agents
+.opencode
